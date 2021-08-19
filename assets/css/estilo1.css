@@ -6,7 +6,7 @@ body {
 table a{
   text-decoration: underline;
 }
-footer h3{
+.footer h3, footer h3{
   font-family: 'Lobster', cursive;
   text-transform:capitalize;
   font-size: 30pt;
@@ -27,6 +27,12 @@ h3:hover{
 }
 footer a:hover{
   text-decoration: none;
+}
+.qtd{
+  text-align-last: center;
+  margin-top: 45px;
+  font-weight: 700;
+  font-size: 16pt;
 }
 @media (min-width: 1200px){
   .container{

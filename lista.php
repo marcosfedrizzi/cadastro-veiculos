@@ -1,11 +1,6 @@
 <?php
 
 include_once("conexao.php");
-
-$result_usuarios = "SELECT * FROM placa";
-$resultado_usuarios = mysqli_query($conn, $result_usuarios);
-$row_usuario = mysqli_fetch_assoc($resultado_usuarios);
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,8 +20,8 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuarios);
             <nav class="navbar navbar-light bg-light">
                 <a class="navbar-brand">Lista de Veículos</a>
                 <a href="placas.php"> <button class="btn btn-outline-warning" type="submit">Cadastrar</button></a>
-                <form class="form-inline" action="pesquisa.php" method="post">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Nome da Tarefa" aria-label="Search"
+                <form class="form-inline" action="lista.php" method="post">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Placa, Veículo..." aria-label="Search"
                            name="pesquisa">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
                 </form>
@@ -43,7 +38,14 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuarios);
             <td><b>DATA<b></td>
             <td></td>
         </tr>
-        <?php while($dado = mysqli_fetch_assoc($resultado_usuarios)){ ?>
+        <?php
+        ini_set('display_errors', 0 );
+        error_reporting(0);
+            $pesquisar = $_POST['pesquisa'];
+            $result_cursos = "SELECT * FROM placa WHERE placa LIKE '%$pesquisar%' || carro LIKE '$pesquisar' ORDER BY placa asc";
+            $resultado_cursos = mysqli_query($conn, $result_cursos);
+             ?>
+        <?php while($dado = mysqli_fetch_assoc($resultado_cursos)){ ?>
         <tr>
             <td><?php echo $dado["placa"]; ?></td>
             <td><?php echo $dado["carro"]; ?></td>

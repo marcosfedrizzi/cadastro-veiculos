@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 ?>
 
 <!doctype html>
@@ -33,7 +32,7 @@ session_start();
                 <form action="cadastrar.php" method="post">
                     <div class="form-group">
                         <label for="tarefa">Placa:</label>
-                        <input type="text" class="form-control" name="placa"  required="" placeholder="XXX9999" maxlength="7">
+                        <input type="text" class="form-control" name="placa"  required="" placeholder="XXX9999" maxlength="7" minlength="7">
                     </div>
                     <div class="form-group">
                         <label for="descricao">Carro:</label>
@@ -44,10 +43,11 @@ session_start();
                         <input type="text" class="form-control" name="itens" placeholder="Ex. Filtro de óleo, Filtro de combústivel..." required="">
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar</button>
-                    <a href="lista.php" class="btn btn-secondary">Ver Tarefas</a>
+                    <a href="lista.php" class="btn btn-secondary">Ver Lista</a>
                 </form>
             </div>
 </div>
+
 </body>
 <footer class="footer cadastro">
 <a href="https://instagram.com/douglaseduar"><h3>Douglas</h3></a>
