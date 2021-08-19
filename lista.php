@@ -12,13 +12,29 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuarios);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="estilo1.css">
-    <link rel="shortcut icon" href="placa-stop.png" />
+    <link rel="stylesheet" type="text/css" href="assets/css/estilo1.css">
+    <link rel="shortcut icon" href="assets/img/placa-stop1.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>Placas Veículos</title>
 </head>
 <body>
-<div class="comeco1">
-<div class="comeco">
+<div class="row">
+        <div class="col">
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand">Lista de Veículos</a>
+                <a href="placas.php"> <button class="btn btn-outline-warning" type="submit">Cadastrar</button></a>
+                <form class="form-inline" action="pesquisa.php" method="post">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Nome da Tarefa" aria-label="Search"
+                           name="pesquisa">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
     <table>
         <tr>
             <td><b>PLACA<b></td>
@@ -32,15 +48,16 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuarios);
             <td><?php echo $dado["placa"]; ?></td>
             <td><?php echo $dado["carro"]; ?></td>
             <td><?php echo $dado["itens"]; ?></td>
-            <td><?php echo date("m/Y", strtotime($dado["created"])); ?></td>
+            <td><?php echo date("d/m/Y", strtotime($dado["data"])); ?></td>
             <td><?php echo "<a href='editplacas.php?id=" . $dado['id'] . "'>Editar</a>"; ?></td>
         </tr>
         <?php } ?>
     </table>
-    </div>
-    <img src="fundo.jpg" class="fundo">
-    </div>
+        </div></div>
+
+    <footer>
+<a href="https://instagram.com/douglaseduar"><h3>Douglas</h3></a>
+</footer>
 </body>
-<div class="logo"><img src="logo_1_1.png" alt="Logo" height="80px"></div>
-<div class="logo1">© 2020 DISTRIBUIDORA GRANDE RIO. Todos os direitos reservados.<br>Desenvolvido por <a href="https://instagram.com/douglaseduar">Douglas</div> 
+
 </html>

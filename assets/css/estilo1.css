@@ -1,20 +1,39 @@
 body {
     font-family: sans-serif;
-    text-transform: uppercase;
     width: 100%;
     height: 100%;
 }
-.comeco1 {
-  width: 1360px;
-  position: relative;
-  margin: 0 auto;
+table a{
+  text-decoration: underline;
 }
-.comeco {
-    margin: 0 auto;
-    width: 620px;
-    position: relative;
-    
+footer h3{
+  font-family: 'Lobster', cursive;
+  text-transform:capitalize;
+  font-size: 30pt;
+  text-align: center;
+  color: #adadad;
+  margin-top: 2rem;
 }
+.cadastro{
+  position:absolute; 
+  bottom:20px;
+  left:0%; 
+  right:0%; 
+}
+h3:hover{
+  background: -webkit-linear-gradient(rgb(0, 0, 0), rgb(3, 129, 212));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer a:hover{
+  text-decoration: none;
+}
+@media (min-width: 1200px){
+  .container{
+    max-width: 850px!important;
+  }
+}
+
 table, td, th {
     border: none;
     padding: 5px;
@@ -26,28 +45,6 @@ table, td, th {
   table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 1rem;
+    text-transform: uppercase;
   }
-  h1 {
-    font-family: sans-serif;
-    text-decoration: underline;
-    text-align: center;
-}
-.logo {
-  text-align: center;
-  font-family: arial;
-  font-size: 9pt;
-  margin-top: 30px;
-}
-.logo1 {
-  text-align: center;
-  font-family: arial;
-  font-size: 9pt;
-  text-transform: none!important;
-}
-.fundo {
-  float: right;
-  margin-top: -200px;
-  position: fixed;
-  top: 50%;
-  left: 78%;
-}
