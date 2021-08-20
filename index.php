@@ -24,10 +24,10 @@ $conta_linhas = mysqli_num_rows($resultado_usuarios);
                     <div class="card-body">
                         <h3 class="card-title"><b><img src="assets/img/placa-stop1.png" height="50px"/> Bem-vindo!</b></h3>
                         <p class="card-text">Procure por uma placa ou cadastre um novo veículo no sistema.</p>
-                        <form action="consulta" method="get">
+                        <form action="placas.php" method="get">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Placa" aria-describedby="button-addon2" maxlength="7">
-                                <button class="btn btn-outline-success" type="button" id="button-addon2" style="    padding: 0px 10px!important;font-size: 18pt;"><i class="bi bi-arrow-right-circle-fill"></i></button>
+                            <input type="text" class="form-control" placeholder="Placa" aria-describedby="button-addon2" maxlength="7" name="consultaplaca">
+                                <button class="btn btn-outline-success" type="submit" id="button-addon2" style="padding: 0px 10px!important;font-size: 18pt;"><i class="bi bi-arrow-right-circle-fill"></i></button>
                                 </div>
                         </form>
                         <div class="botao" style="text-align-last: center;">

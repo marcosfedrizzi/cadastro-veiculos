@@ -1,5 +1,29 @@
 <?php
+       ini_set('display_errors', 0 );
+       error_reporting(0);
+
 session_start();
+$placaconsulta = $_GET['consultaplaca'];
+$arrContextOptions=array(
+    "ssl"=>array(
+        "verify_peer"=>false,
+        "verify_peer_name"=>false,
+    ),
+);  
+
+$response = file_get_contents("https://apicarros.com/v1/consulta/$placaconsulta/json", false, stream_context_create($arrContextOptions));
+
+$json = json_decode($response);
+
+
+$modelo = ($json -> modelo);
+$ano = ($json -> ano);
+if($response = "HTTP/1.1 429"){
+    $modelo = "voce não digitou a placa ou de requerimento";
+}
+
+if($response = "HTTP/1.1 402"){
+    $modelo = "essa placa não existe";}
 
 ?>
 
@@ -32,11 +56,11 @@ session_start();
                 <form action="cadastrar.php" method="post">
                     <div class="form-group">
                         <label for="tarefa">Placa:</label>
-                        <input type="text" class="form-control" name="placa"  required="" placeholder="XXX9999" maxlength="7" minlength="7">
+                        <input type="text" class="form-control" name="placa"  required="" placeholder="XXX9999" maxlength="7" minlength="7" value="<?php echo $placaconsulta?>">
                     </div>
                     <div class="form-group">
                         <label for="descricao">Carro:</label>
-                        <input type="text" class="form-control" name="veiculo" placeholder="Ex. Fusca" required="" maxlength="25">
+                        <input type="text" class="form-control" name="veiculo" placeholder="Ex. Fusca" required="" maxlength="25" value="<?php echo "$modelo $ano"?>">
                     </div>
                     <div class="form-group">
                         <label for="prazo">Itens:</label>

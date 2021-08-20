@@ -19,7 +19,7 @@ include_once("conexao.php");
         <div class="col">
             <nav class="navbar navbar-light bg-light">
                 <a class="navbar-brand">Lista de Veículos</a>
-                <a href="placas.php"> <button class="btn btn-outline-warning" type="submit">Cadastrar</button></a>
+                <a href="index.php"> <button class="btn btn-outline-warning" type="submit">Cadastrar</button></a>
                 <form class="form-inline" action="lista.php" method="post">
                     <input class="form-control mr-sm-2" type="search" placeholder="Placa, Veículo..." aria-label="Search"
                            name="pesquisa">

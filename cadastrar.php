@@ -21,7 +21,7 @@ else{
 
 if(mysqli_insert_id($conn)) {
     $_SESSION['msg'] = "<p style='color:green; font-family: sans-serif;'>Veículo Cadastrado com sucesso!</p>";
-    header("Location: placas.php");
+    header("Location: index.php");
 }
 else {
     $_SESSION['msg'] = "<p style='color:red; font-family: sans-serif;'>Veículo não foi Cadastrado!</p>";
