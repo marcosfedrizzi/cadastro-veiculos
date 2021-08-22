@@ -13,7 +13,7 @@ $result = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result) > 0) {
         $_SESSION['msg'] = "<p style='color:orange; font-family: sans-serif;'>Veículo Cadastrado JÁ EXISTE!</p>";
-        header("Location: placas.php");}
+        header("Location: ../placas.php");}
 
 else{
     $result_usuario = "INSERT INTO placa (placa, carro, itens, data) VALUES ('$placa', '$carro', '$itens', NOW())";
@@ -21,10 +21,10 @@ else{
 
 if(mysqli_insert_id($conn)) {
     $_SESSION['msg'] = "<p class='qtd' style='color:green; font-family: sans-serif;'>Veículo Cadastrado com sucesso!</p>";
-    header("Location: index.php");
+    header("Location: ../index.php");
 }
 else {
     $_SESSION['msg'] = "<p style='color:red; font-family: sans-serif;'>Veículo não foi Cadastrado!</p>";
-    header("Location: placas.php");
+    header("Location: ../placas.php");
 }}
 ?>

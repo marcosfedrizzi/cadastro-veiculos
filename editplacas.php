@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("conexao.php");
+include_once("config/conexao.php");
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $result_usuario = "SELECT * FROM placa WHERE id = '$id'";
@@ -42,7 +42,7 @@ alert("CUIDADO! Você está editando um veículo já cadastrado!!!");
         unset($_SESSION['msg']);
     }
     ?>
-        <form method="POST" action="editprocessa.php">
+        <form method="POST" action="config/editprocessa.php">
         <div class="form-group">
                         <label for="tarefa">Placa:</label>
                         <input type="hidden" name="id" value="<?php echo $row_usuario['id']?>">

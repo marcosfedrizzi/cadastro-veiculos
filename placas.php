@@ -1,7 +1,7 @@
 <?php
       ini_set('display_errors', 0 );
       error_reporting(0);
-include_once("conexao.php");
+include_once("config/conexao.php");
 
 
 $placaconsulta = $_GET['consultaplaca'];
@@ -49,7 +49,7 @@ $marca = ($json -> marca);
     <div class="container">
         <div class="row">
             <div class="col">
-                <form action="cadastrar.php" method="post">
+                <form action="config/cadastrar.php" method="post">
                     <div class="form-group">
                         <label for="tarefa">Placa:</label>
                         <input type="text" class="form-control" name="placa"  required="" placeholder="XXX9999" maxlength="7" minlength="7" value="<?php echo $placaconsulta?>">

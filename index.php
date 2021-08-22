@@ -1,5 +1,5 @@
 <?php 
-include_once("conexao.php");
+include_once("config/conexao.php");
 
 $result_usuarios = "SELECT * FROM placa";
 $resultado_usuarios = mysqli_query($conn, $result_usuarios);
@@ -22,14 +22,15 @@ session_start();
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="card" style="width: 20rem; display: block; margin: 12rem auto 0 auto;">
-                <?php
+            <?php
     if(isset ($_SESSION['msg'])){
         echo $_SESSION['msg'];
         echo "<br>";
         unset($_SESSION['msg']);
     }
     ?>
+                <div class="card" style="width: 20rem; display: block; margin: 12rem auto 0 auto;">
+
                     <div class="card-body">
                         <h3 class="card-title"><b><img src="assets/img/placa-stop1.png" height="50px"/> Bem-vindo!</b></h3>
                         <p class="card-text">Procure por uma placa ou cadastre um novo veículo no sistema.</p>
