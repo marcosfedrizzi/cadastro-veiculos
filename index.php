@@ -35,7 +35,7 @@ session_start();
                         <p class="card-text">Procure por uma placa ou cadastre um novo veículo no sistema.</p>
                         <form action="placas.php" method="get">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Placa" aria-describedby="button-addon2" maxlength="7" minlength="7" name="consultaplaca">
+                            <input type="text" class="form-control" placeholder="Placa" aria-describedby="button-addon2" maxlength="7" minlength="7" required name="consultaplaca">
                                 <button class="btn btn-outline-success" type="submit" id="button-addon2" style="padding: 0px 10px!important;font-size: 18pt;"><i class="bi bi-arrow-right-circle-fill"></i></button>
                                 </div>
                         </form>
