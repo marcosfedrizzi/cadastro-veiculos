@@ -54,3 +54,7 @@ table, td, th {
     margin-top: 1rem;
     text-transform: uppercase;
   }
+  .edit{
+    background-color: orange;
+    padding: 5px 40px;
+  }

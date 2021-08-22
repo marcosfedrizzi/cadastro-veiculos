@@ -6,6 +6,7 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $result_usuario = "SELECT * FROM placa WHERE id = '$id'";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 $row_usuario = mysqli_fetch_assoc($resultado_usuario);
+
 ?>
 
 <!doctype html>
@@ -18,10 +19,17 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
         <link rel="shortcut icon" href="assets/img/placa-stop1.png"/>
         <link rel="stylesheet" href="assets/css/estilo1.css">
     </head>
-    <body>
+    <script>
+function funcao1()
+{
+alert("CUIDADO! Você está editando um veículo já cadastrado!!!");
+}
+</script>
+    <body onload="funcao1()">
+ 
     <nav class="navbar navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Editar Veículo</a>
+            <a class="navbar-brand edit" href="#">Editar Veículo</a>
         </div>
     </nav>
     <div class="container">
@@ -42,13 +50,14 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
                     </div>
                     <div class="form-group">
                         <label for="descricao">Carro:</label>
-                        <input type="text" class="form-control" name="veiculo" placeholder="Ex. Fusca" required="" maxlength="25" value="<?php echo $row_usuario['carro']?>">
+                        <input type="text" class="form-control" name="veiculo" placeholder="Ex. Fusca" required=""  value="<?php echo $row_usuario['carro']?>">
                     </div>
                     <div class="form-group">
                         <label for="prazo">Itens:</label>
                         <input type="text" class="form-control" name="itens" placeholder="Ex. Filtro de óleo, Filtro de combústivel..." required="" value="<?php echo $row_usuario['itens']?>">
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar</button>
+                    <a href="index.php" class="btn btn-secondary">Voltar</a>
                     
                 </form>
             </div>

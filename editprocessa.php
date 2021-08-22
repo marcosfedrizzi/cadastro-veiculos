@@ -12,8 +12,7 @@ $itens = filter_input(INPUT_POST, 'itens', FILTER_SANITIZE_STRING);
     $resultado_usuario = mysqli_query($conn, $result_usuario);
 
 if(mysqli_affected_rows($conn)) {
-    $_SESSION['msg'] = "<p style='color:green; font-family: sans-serif;'>Veículo editado com sucesso!</p>";
-    header("Location: lista.php");
+    header("Location: index.php");
 }
 else {
     $_SESSION['msg'] = "<p style='color:red; font-family: sans-serif;'>Veículo $placa não foi editado!</p>";

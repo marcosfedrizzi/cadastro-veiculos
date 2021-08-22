@@ -20,7 +20,7 @@ else{
     $resultado_usuario = mysqli_query($conn, $result_usuario);
 
 if(mysqli_insert_id($conn)) {
-    $_SESSION['msg'] = "<p style='color:green; font-family: sans-serif;'>Veículo Cadastrado com sucesso!</p>";
+    $_SESSION['msg'] = "<p class='qtd' style='color:green; font-family: sans-serif;'>Veículo Cadastrado com sucesso!</p>";
     header("Location: index.php");
 }
 else {

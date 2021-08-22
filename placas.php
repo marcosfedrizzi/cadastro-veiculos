@@ -1,9 +1,19 @@
 <?php
-       ini_set('display_errors', 0 );
-       error_reporting(0);
+      ini_set('display_errors', 0 );
+      error_reporting(0);
+include_once("conexao.php");
 
-session_start();
+
 $placaconsulta = $_GET['consultaplaca'];
+$sql = "SELECT * FROM placa WHERE placa = '$placaconsulta'";
+$result = mysqli_query($conn, $sql);
+
+if(mysqli_num_rows($result) > 0) {
+    while($dado = mysqli_fetch_assoc($result)){
+        header("Location: editplacas.php?id=" . $dado['id'] ."");
+    }
+}
+else{
 $arrContextOptions=array(
     "ssl"=>array(
         "verify_peer"=>false,
@@ -15,16 +25,9 @@ $response = file_get_contents("https://apicarros.com/v1/consulta/$placaconsulta/
 
 $json = json_decode($response);
 
-
 $modelo = ($json -> modelo);
 $ano = ($json -> ano);
-if($response = "HTTP/1.1 429"){
-    $modelo = "voce não digitou a placa ou de requerimento";
-}
-
-if($response = "HTTP/1.1 402"){
-    $modelo = "essa placa não existe";}
-
+$marca = ($json -> marca);
 ?>
 
 <!doctype html>
@@ -46,13 +49,6 @@ if($response = "HTTP/1.1 402"){
     <div class="container">
         <div class="row">
             <div class="col">
-            <?php
-    if(isset ($_SESSION['msg'])){
-        echo $_SESSION['msg'];
-        echo "<br>";
-        unset($_SESSION['msg']);
-    }
-    ?>
                 <form action="cadastrar.php" method="post">
                     <div class="form-group">
                         <label for="tarefa">Placa:</label>
@@ -77,3 +73,4 @@ if($response = "HTTP/1.1 402"){
 <a href="https://instagram.com/douglaseduar"><h3>Douglas</h3></a>
 </footer>
 </html>
+<?php } ?>

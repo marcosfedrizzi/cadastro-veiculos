@@ -4,6 +4,8 @@ include_once("conexao.php");
 $result_usuarios = "SELECT * FROM placa";
 $resultado_usuarios = mysqli_query($conn, $result_usuarios);
 $conta_linhas = mysqli_num_rows($resultado_usuarios);
+
+session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,12 +23,19 @@ $conta_linhas = mysqli_num_rows($resultado_usuarios);
         <div class="row">
             <div class="col">
                 <div class="card" style="width: 20rem; display: block; margin: 12rem auto 0 auto;">
+                <?php
+    if(isset ($_SESSION['msg'])){
+        echo $_SESSION['msg'];
+        echo "<br>";
+        unset($_SESSION['msg']);
+    }
+    ?>
                     <div class="card-body">
                         <h3 class="card-title"><b><img src="assets/img/placa-stop1.png" height="50px"/> Bem-vindo!</b></h3>
                         <p class="card-text">Procure por uma placa ou cadastre um novo veículo no sistema.</p>
                         <form action="placas.php" method="get">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Placa" aria-describedby="button-addon2" maxlength="7" name="consultaplaca">
+                            <input type="text" class="form-control" placeholder="Placa" aria-describedby="button-addon2" maxlength="7" minlength="7" name="consultaplaca">
                                 <button class="btn btn-outline-success" type="submit" id="button-addon2" style="padding: 0px 10px!important;font-size: 18pt;"><i class="bi bi-arrow-right-circle-fill"></i></button>
                                 </div>
                         </form>
