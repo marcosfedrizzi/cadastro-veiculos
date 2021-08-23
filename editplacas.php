@@ -18,6 +18,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
         <title>Editar Veiculo</title>
         <link rel="shortcut icon" href="assets/img/placa-stop1.png"/>
         <link rel="stylesheet" href="assets/css/estilo1.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     </head>
     <script>
 function funcao1()

@@ -17,18 +17,12 @@ session_start();
         <link rel="shortcut icon" href="assets/img/placa-stop1.png"/>
         <link rel="stylesheet" href="assets/css/estilo1.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     </head>
     <body style="background: #dedede">
     <div class="container">
         <div class="row">
             <div class="col">
-            <?php
-    if(isset ($_SESSION['msg'])){
-        echo $_SESSION['msg'];
-        echo "<br>";
-        unset($_SESSION['msg']);
-    }
-    ?>
                 <div class="card" style="width: 20rem; display: block; margin: 12rem auto 0 auto;">
 
                     <div class="card-body">

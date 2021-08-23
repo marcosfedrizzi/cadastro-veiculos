@@ -42,7 +42,7 @@ include_once("config/conexao.php");
         ini_set('display_errors', 0 );
         error_reporting(0);
             $pesquisar = $_POST['pesquisa'];
-            $result_cursos = "SELECT * FROM placa WHERE placa || carro LIKE '%$pesquisar%' ORDER BY placa asc";
+            $result_cursos = "SELECT * FROM placa WHERE placa LIKE '%$pesquisar%' || carro LIKE '%$pesquisar%' ORDER BY placa asc";
             $resultado_cursos = mysqli_query($conn, $result_cursos);
              ?>
         <?php while($dado = mysqli_fetch_assoc($resultado_cursos)){ ?>
