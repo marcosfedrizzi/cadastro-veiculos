@@ -13,7 +13,7 @@ Sistema para cadastro e controle de veículos em oficinas, mecânicas, chapeaç�
 ### Requisitos:
 
 ``` 
-- Servidor WEB VPS linux (que permita utilizar o crontab). É necessário que o apache, php e mysql estejam instalados e configurados corretamente. 
+- Servidor WEB VPS linux. É necessário que o apache, php e mysql estejam instalados e configurados corretamente. 
  ```
  
  ### Banco de dados:
